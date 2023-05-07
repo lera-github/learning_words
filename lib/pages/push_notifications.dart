@@ -1,86 +1,7 @@
+//import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:learning_words/pages/flashcards.dart';
-import 'package:learning_words/pages/login.dart';
-import 'package:learning_words/pages/push_notifications.dart';
-
-void main() {
-  runApp(const MyApp());
-}
-
-class MyApp extends StatelessWidget {
-  const MyApp({Key? key}) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Leralingo',
-      theme: ThemeData(
-        primarySwatch: Colors.green,
-      ),
-      home: const MyHomePage(),
-    );
-  }
-}
-
-class MyHomePage extends StatelessWidget {
-  const MyHomePage({Key? key}) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(title: const Text('Главная страница')),
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            ElevatedButton(
-              onPressed: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) => const FlashcardsScreen()),
-                );
-              },
-              child: const Text('Карточки'),
-            ),
-            ElevatedButton(
-              onPressed: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) => const LoginPage()),
-                );
-              },
-              child: const Text('Вход'),
-            ),
-            ElevatedButton(
-              onPressed: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) => const PushNotificationsScreen()),
-                );
-              },
-              child: const Text('Уведомления'),
-            ),
-          ],
-        ),
-      ),
-    );
-  }
-}
-
-
-/*
-class MyApp extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Leralingo',
-      theme: ThemeData(
-        primarySwatch: Colors.green,
-      ),
-      home: const PushNotificationsScreen(),
-    );
-  }
-}
+import 'package:flutter_local_notifications/flutter_local_notifications.dart';
+import 'package:rxdart/subjects.dart';
 
 
 class PushNotificationsScreen extends StatefulWidget {
@@ -88,6 +9,19 @@ class PushNotificationsScreen extends StatefulWidget {
 
   @override
   PushNotificationsScreenState createState() => PushNotificationsScreenState();
+    Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(title: const Text('Уведомления')),
+      body: Center(
+        child: ElevatedButton(
+          onPressed: () {
+            Navigator.pop(context);
+          },
+          child: const Text('Назад на главную страницу '),
+        ),
+      ),
+    );
+  }
 }
 
 class PushNotificationsScreenState extends State<PushNotificationsScreen> {
@@ -205,4 +139,3 @@ class PushNotificationsScreenState extends State<PushNotificationsScreen> {
     );
   }
 }
-*/

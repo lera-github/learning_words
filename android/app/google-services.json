@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "233577316470",
+    "project_id": "learning-words-d3852",
+    "storage_bucket": "learning-words-d3852.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:233577316470:android:2cb19b012174b049415f57",
+        "android_client_info": {
+          "package_name": "com.example.learning_words"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "233577316470-9ckj9msl7fe15032v0l63q14om8ip6m6.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD_RSJDlaTnAEnAYII9MKZCa5iv2Wik0No"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "233577316470-9ckj9msl7fe15032v0l63q14om8ip6m6.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
