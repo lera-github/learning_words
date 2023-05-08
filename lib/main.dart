@@ -1,11 +1,19 @@
 import 'package:flutter/material.dart';
 import 'package:learning_words/pages/flashcards.dart';
-import 'package:learning_words/pages/login.dart';
+import 'package:learning_words/pages/registration.dart';
 import 'package:learning_words/pages/push_notifications.dart';
+import 'package:firebase_core/firebase_core.dart';
+//import 'package:myapp/firebase_options.dart';
 
-void main() {
+
+
+
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp();
   runApp(const MyApp());
 }
+
 
 class MyApp extends StatelessWidget {
   const MyApp({Key? key}) : super(key: key);
@@ -37,7 +45,8 @@ class MyHomePage extends StatelessWidget {
               onPressed: () {
                 Navigator.push(
                   context,
-                  MaterialPageRoute(builder: (context) => const FlashcardsScreen()),
+                  MaterialPageRoute(
+                      builder: (context) => const FlashcardsScreen()),
                 );
               },
               child: const Text('Карточки'),
@@ -46,7 +55,7 @@ class MyHomePage extends StatelessWidget {
               onPressed: () {
                 Navigator.push(
                   context,
-                  MaterialPageRoute(builder: (context) => const LoginPage()),
+                  MaterialPageRoute(builder: (context) => RegistrationPage()),
                 );
               },
               child: const Text('Вход'),
@@ -55,7 +64,8 @@ class MyHomePage extends StatelessWidget {
               onPressed: () {
                 Navigator.push(
                   context,
-                  MaterialPageRoute(builder: (context) => const PushNotificationsScreen()),
+                  MaterialPageRoute(
+                      builder: (context) => const PushNotificationsScreen()),
                 );
               },
               child: const Text('Уведомления'),

@@ -1,27 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_local_notifications/flutter_local_notifications.dart';
 
-
-/*
-class CardPage extends StatelessWidget {
-  const CardPage({Key? key}) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(title: const Text('Карточки')),
-      body: Center(
-        child: ElevatedButton(
-          onPressed: () {
-            Navigator.pop(context);
-          },
-          child: const Text('Назад на главную страницу '),
-        ),
-      ),
-    );
-  }
-}
-*/
 
 class FlashcardsScreen extends StatefulWidget {
   const FlashcardsScreen({super.key});
