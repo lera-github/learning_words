@@ -1,17 +1,34 @@
 import 'package:flutter/material.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:firebase_core/firebase_core.dart';
 
 
 class FlashcardsScreen extends StatefulWidget {
-  const FlashcardsScreen({super.key});
+  const FlashcardsScreen({Key? key}) : super(key: key);
 
   @override
   _FlashcardsScreenState createState() => _FlashcardsScreenState();
 }
 
 class _FlashcardsScreenState extends State<FlashcardsScreen> {
-  final List<Flashcard> flashcards = [    Flashcard('Hello', 'Привет'),    Flashcard('Goodbye', 'Пока'),    Flashcard('Thank you', 'Спасибо'),  ];
+  List<Flashcard> flashcards = [];
 
   int currentIndex = 0;
+
+  @override
+  void initState() {
+    super.initState();
+    initializeFirebase();
+  }
+
+  void initializeFirebase() async {
+    await Firebase.initializeApp();
+    final snapshot = await FirebaseFirestore.instance.collection('modules').get();
+    setState(() {
+      flashcards = snapshot.docs.map((doc) => Flashcard(doc['word'], doc['translation'])).toList();
+    });
+  }
+
 
   @override
   Widget build(BuildContext context) {
