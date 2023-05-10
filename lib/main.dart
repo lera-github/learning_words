@@ -3,6 +3,7 @@ import 'package:learning_words/pages/flashcards.dart';
 import 'package:learning_words/pages/mysignin.dart';
 import 'package:learning_words/pages/push_notifications.dart';
 import 'package:firebase_core/firebase_core.dart';
+import 'package:learning_words/pages/translation.dart';
 //import 'package:myapp/firebase_options.dart';
 
 
@@ -69,6 +70,16 @@ class MyHomePage extends StatelessWidget {
                 );
               },
               child: const Text('Уведомления'),
+            ),
+            ElevatedButton(
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                      builder: (context) => TranslationPage()),
+                );
+              },
+              child: const Text('Учить слова!'),
             ),
           ],
         ),
