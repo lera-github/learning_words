@@ -1,7 +1,9 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import 'package:myapp/main.dart';
-import 'package:myapp/pages/mysignup.dart';
+import 'package:learning_words/helpers/fb_hlp.dart';
+import 'package:learning_words/helpers/other_hlp.dart';
+import 'package:learning_words/main.dart';
+import 'package:learning_words/pages/mysignup.dart';
 
 class SignInScreen extends StatefulWidget {
   const SignInScreen({Key? key}) : super(key: key);

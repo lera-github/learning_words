@@ -40,6 +40,8 @@ dependencies:
   flutter_swiper: ^1.1.6
   firebase_core: ^2.11.0
   cloud_firestore: ^4.6.0
+  firebase_auth: ^4.6.0
+  firebase_storage: ^11.2.0
 
 dev_dependencies:
   flutter_test:

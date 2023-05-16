@@ -6,15 +6,14 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:learning_words/pages/translation.dart';
 //import 'package:myapp/firebase_options.dart';
 
-
-
+//очки пользователя
+int retScore = 0;
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp();
   runApp(const MyApp());
 }
-
 
 class MyApp extends StatelessWidget {
   const MyApp({Key? key}) : super(key: key);
@@ -26,13 +25,19 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.green,
       ),
-      home: const MyHomePage(),
+      home:  MyHomePage(collectionPath: '', usermapdata: {},),
     );
   }
 }
 
 class MyHomePage extends StatelessWidget {
-  const MyHomePage({Key? key}) : super(key: key);
+  const MyHomePage({
+    Key? key,
+    required this.collectionPath,
+    required this.usermapdata,
+  }) : super(key: key);
+  final String collectionPath;
+  final Map<String, dynamic> usermapdata;
 
   @override
   Widget build(BuildContext context) {
@@ -75,8 +80,7 @@ class MyHomePage extends StatelessWidget {
               onPressed: () {
                 Navigator.push(
                   context,
-                  MaterialPageRoute(
-                      builder: (context) => TranslationPage()),
+                  MaterialPageRoute(builder: (context) => TranslationPage()),
                 );
               },
               child: const Text('Учить слова!'),
