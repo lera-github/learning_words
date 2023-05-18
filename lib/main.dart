@@ -25,7 +25,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.green,
       ),
-      home:  MyHomePage(collectionPath: '', usermapdata: {},),
+      home:  const MyHomePage(collectionPath: '', usermapdata: {},),
     );
   }
 }
