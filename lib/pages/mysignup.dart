@@ -141,8 +141,8 @@ class _SignUpScreenState extends State<SignUpScreen> {
                           ),
                         );
                       },
-                      child: Row(
-                        children: const [
+                      child: const Row(
+                        children: [
                           Icon(
                             Icons.arrow_back_rounded,
                             color: Colors.white70,

@@ -80,7 +80,7 @@ class MyHomePage extends StatelessWidget {
               onPressed: () {
                 Navigator.push(
                   context,
-                  MaterialPageRoute(builder: (context) => TranslationPage()),
+                  MaterialPageRoute(builder: (context) => const TranslationPage()),
                 );
               },
               child: const Text('Учить слова!'),

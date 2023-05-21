@@ -7,10 +7,10 @@ class FlashcardsScreen extends StatefulWidget {
   const FlashcardsScreen({Key? key}) : super(key: key);
 
   @override
-  _FlashcardsScreenState createState() => _FlashcardsScreenState();
+  FlashcardsScreenState createState() => FlashcardsScreenState();
 }
 
-class _FlashcardsScreenState extends State<FlashcardsScreen> {
+class FlashcardsScreenState extends State<FlashcardsScreen> {
   List<Flashcard> flashcards = [];
 
   int currentIndex = 0;
@@ -87,15 +87,15 @@ class _FlashcardsScreenState extends State<FlashcardsScreen> {
 class FlashcardWidget extends StatefulWidget {
   final Flashcard flashcard;
 
-  const FlashcardWidget({
+  const FlashcardWidget({super.key, 
     required this.flashcard,
   });
 
   @override
-  _FlashcardWidgetState createState() => _FlashcardWidgetState();
+  FlashcardWidgetState createState() => FlashcardWidgetState();
 }
 
-class _FlashcardWidgetState extends State<FlashcardWidget>
+class FlashcardWidgetState extends State<FlashcardWidget>
     with SingleTickerProviderStateMixin {
   late final AnimationController _flipAnimationController;
   late final Animation<double> _flipAnimation;
@@ -194,7 +194,7 @@ child: Center(
           right: 16,
           child: FloatingActionButton(
             onPressed: _toggleFlip,
-            child: Icon(Icons.flip),
+            child: const Icon(Icons.flip),
           ),
         ),
       ],

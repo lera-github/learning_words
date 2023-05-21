@@ -39,16 +39,14 @@ class PushNotificationsScreenState extends State<PushNotificationsScreen> {
     flutterLocalNotificationsPlugin = FlutterLocalNotificationsPlugin();
     flutterLocalNotificationsPlugin.initialize(initializationSettings,
         onDidReceiveNotificationResponse: (payload) async {
-      if (payload != null) {
-        debugPrint('notification payload: $payload');
-      }
+      debugPrint('notification payload: $payload');
       selectNotificationSubject
           .add(payload.payload.toString()); /////////////////////////////
     });
   }
 
   Future<void> _onScheduleNotificationButtonPressed() async {
-    var scheduledTime = DateTime.now().add(Duration(seconds: 5));
+    var scheduledTime = DateTime.now().add(const Duration(seconds: 5));
 
     var androidPlatformChannelSpecifics = const AndroidNotificationDetails(
         'channel_id', 'channel_name',
@@ -99,11 +97,11 @@ class PushNotificationsScreenState extends State<PushNotificationsScreen> {
       context: context,
       builder: (context) {
         return AlertDialog(
-          title: Text('Уведомление отменено'),
-          content: Text('Запланированное уведомление было отменено.'),
+          title: const Text('Уведомление отменено'),
+          content: const Text('Запланированное уведомление было отменено.'),
           actions: [
             TextButton(
-              child: Text('ОК'),
+              child: const Text('ОК'),
               onPressed: () {
                 Navigator.pop(context);
               },
@@ -118,7 +116,7 @@ class PushNotificationsScreenState extends State<PushNotificationsScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Leralingo'),
+        title: const Text('Leralingo'),
       ),
       body: Center(
         child: Column(
@@ -126,12 +124,12 @@ class PushNotificationsScreenState extends State<PushNotificationsScreen> {
           children: <Widget>[
             ElevatedButton(
               onPressed: _onScheduleNotificationButtonPressed,
-              child: Text('Запланировать уведомление'),
+              child: const Text('Запланировать уведомление'),
             ),
-            SizedBox(height: 16),
+            const SizedBox(height: 16),
             ElevatedButton(
               onPressed: _onCancelNotificationButtonPressed,
-              child: Text('Отменить уведомление'),
+              child: const Text('Отменить уведомление'),
             ),
           ],
         ),

@@ -1,11 +1,8 @@
-import 'dart:collection';
 
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 import 'package:learning_words/helpers/fb_hlp.dart';
-import 'package:learning_words/helpers/styles.dart';
-import 'package:learning_words/main.dart';
 
 // показ предупреждений
 void showAlert({
@@ -112,6 +109,8 @@ class TTip extends StatelessWidget {
 // диалог выбора изображения
 class ShowImgDialog extends StatelessWidget {
   final TextEditingController txtController = TextEditingController();
+
+  ShowImgDialog({super.key});
 
   @override
   Widget build(BuildContext context) {
