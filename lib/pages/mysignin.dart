@@ -77,8 +77,8 @@ class _SignInScreenState extends State<SignInScreen> {
                           myfield: 'username',
                           myvalue: _userNameTextController.text.trim(),
                         );
-                        //такой пользователь зарегистрирован?
 
+                        //такой пользователь зарегистрирован?
                         if (userCollection.isEmpty) {
                           showAlert(
                             context: context,
